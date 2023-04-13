@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <div class="container">
+        <div class="login-container">
             <div class="drop" style="--clr: #01b4ff">
                 <div class="content">
                     <h2 class="login-title title" @click="handleLoginTitle">Login</h2>

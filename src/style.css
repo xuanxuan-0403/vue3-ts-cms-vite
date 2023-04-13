@@ -4,6 +4,10 @@
     font-weight: 400;
 }
 
+body {
+    background-color: #eff0f4 !important;
+}
+
 a {
     text-decoration: none;
 }
