@@ -3,7 +3,8 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 import Unocss from '@unocss/vite';
 import { presetUno, transformerDirectives } from 'unocss';
-import presetDaisy from 'unocss-preset-daisy';
+import { presetDaisy } from 'unocss-preset-daisy';
+import styleImport from 'vite-plugin-style-import';
 
 // https://vitejs.dev/config/
 
@@ -55,6 +56,9 @@ export default defineConfig({
         cors: true, // 允许跨域
         port: 3000, // 端口号
         host: '0.0.0.0',
+        hmr: {
+            overlay: false, // [unocss] entry module not found, have you add `import 'uno.css'` in your mai
+        },
         proxy: {
             '/api': {
                 target: 'http://10.87.1.106:7001', //实际请求地址
@@ -67,7 +71,7 @@ export default defineConfig({
         vue(),
         Unocss({
             transformers: [transformerDirectives()],
-            presets: [presetUno()],
+            presets: [presetDaisy(), presetUno()],
         }),
     ],
 });
