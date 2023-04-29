@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia';
 
 import useLoginState from './login/index';
+import useMainState from './main/index';
+
 import { IRootState } from './types';
 
 export const useStore = defineStore('root', {
@@ -8,6 +10,7 @@ export const useStore = defineStore('root', {
         return {
             name: 'root',
             login: useLoginState(),
+            main: useMainState(),
         };
     },
 });

@@ -5,9 +5,10 @@
                 <el-upload
                     class="upload-demo"
                     drag
-                    action="http://10.87.1.106:7001/upload"
+                    action="http://127.0.0.1:7001/upload"
                     :multiple="false"
-                    @on-success="uploadOver"
+                    accept="zip, rar, 7z"
+                    :data="userId"
                 >
                     <el-icon class="el-icon--upload"><upload-filled /></el-icon>
                     <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
@@ -23,6 +24,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { UploadFilled } from '@element-plus/icons-vue';
+import { useStore } from '@/store';
+
+const store = useStore();
 
 export default defineComponent({
     name: 'main',
@@ -30,11 +34,11 @@ export default defineComponent({
         window,
     },
     setup() {
-        const uploadOver = () => {
-            console.log('上传成功');
-        };
+        const { login } = store;
+        const userId = login.userId;
+
         return {
-            uploadOver,
+            userId,
         };
     },
 });

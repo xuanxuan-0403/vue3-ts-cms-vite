@@ -7,6 +7,7 @@ export interface ILoginResult {
     message: string;
     status: number;
     token: string;
+    userId: number;
 }
 
 export interface IRegisterResult {

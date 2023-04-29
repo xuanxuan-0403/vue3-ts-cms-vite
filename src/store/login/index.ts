@@ -10,13 +10,17 @@ export default defineStore('login', {
         return {
             name: 'login',
             showLoginReactivePage: false,
+            userId: null,
         };
     },
     actions: {
         async accountLoginAction(account: IAccount) {
             const data = await accountLoginRequest({ ...account });
             if (!data) return;
+
             LocalCache.setCache('token', data.token);
+            if (!this.userId) this.userId = data.userId;
+
             console.log(data.message);
 
             // 跳转到 main
