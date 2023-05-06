@@ -8,7 +8,7 @@
                     <el-upload
                         class="upload-demo"
                         drag
-                        action="http://127.0.0.1:7001/upload"
+                        action="http://10.87.1.106:7001/upload"
                         :multiple="false"
                         accept="zip, rar, 7z"
                         :data="{ userId, desc }"

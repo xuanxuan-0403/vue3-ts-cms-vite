@@ -19,7 +19,8 @@ export default defineStore('login', {
             if (!data) return;
 
             LocalCache.setCache('token', data.token);
-            if (!this.userId) this.userId = data.userId;
+            console.log(data.userid);
+            this.userId = data.userid;
 
             console.log(data.message);
 
