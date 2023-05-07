@@ -10,14 +10,14 @@
                         drag
                         action="http://10.87.1.106:7001/upload"
                         :multiple="false"
-                        accept="zip, rar, 7z"
+                        accept=".zip, .rar, .7z"
                         :data="{ userId, desc }"
                         :disabled="isUploadDisabled"
                     >
                         <el-icon class="el-icon--upload"><upload-filled /></el-icon>
                         <div class="el-upload__text">把文件拖拽到这里, <em>或者点击上传</em></div>
                         <template #tip>
-                            <div class="el-upload__tip">zip/rar/7z 限制为1000mb</div>
+                            <div class="el-upload__tip">　.zip / .rar / .7z 限制为1000mb</div>
                         </template>
                     </el-upload>
                 </div>
