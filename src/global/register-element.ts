@@ -3,9 +3,18 @@ import type { App } from 'vue';
 // import 'element-plus/lib/theme-chalk/base.css';
 import 'element-plus/dist/index.css';
 
-import { ElButton, ElAffix, ElUpload, ElIcon } from 'element-plus';
+import {
+    ElButton,
+    ElAffix,
+    ElUpload,
+    ElIcon,
+    ElContainer,
+    ElHeader,
+    ElAside,
+    ElMain,
+} from 'element-plus';
 
-const components = [ElButton, ElAffix, ElUpload, ElIcon];
+const components = [ElButton, ElAffix, ElUpload, ElIcon, ElContainer, ElHeader, ElAside, ElMain];
 
 // icon
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
