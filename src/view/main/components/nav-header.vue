@@ -19,7 +19,7 @@
                         class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
                     >
                         <li><a>设置</a></li>
-                        <li><a>登出</a></li>
+                        <li @click="handleLogoutClick"><a>登出</a></li>
                     </ul>
                 </div>
             </div>
@@ -29,10 +29,18 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import LocalCache from '@/utils/cache';
 
 export default defineComponent({
     setup() {
-        return {};
+        const handleLogoutClick = () => {
+            LocalCache.deleteCache('token');
+            window.location.reload();
+        };
+
+        return {
+            handleLogoutClick,
+        };
     },
 });
 </script>

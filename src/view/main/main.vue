@@ -10,11 +10,7 @@
                         <NavMenu />
                     </el-aside>
                     <el-main>
-                        <div class="mockup-window border bg-base-300">
-                            <div class="flex justify-center px-4 py-16 bg-base-200">
-                                <router-view></router-view>
-                            </div>
-                        </div>
+                        <router-view></router-view>
                     </el-main>
                 </el-container>
             </el-container>
@@ -43,7 +39,7 @@ export default defineComponent({
 .main {
     width: 100vw;
     height: 100vh;
-    padding: 2vw;
+    padding: 3vh 3vw;
 }
 
 .el-header {

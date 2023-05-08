@@ -11,7 +11,7 @@ class XRRequest {
     #instance: AxiosInstance; // axios实例
     #interceptors?: XRRequestInterceptors; // 拦截器对象
     #showLoading: boolean; // 这边是必选的，如果没有传，默认是true
-    // #loading?: ILoadingInstance;
+    #loading?: any;
 
     constructor(config: XRRequestConfig) {
         this.#instance = axios.create(config);
@@ -37,11 +37,11 @@ class XRRequest {
                 // 根据 showLoading 要不要显示 loading
                 if (this.#showLoading) {
                     // 在响应前添加加载动画
-                    // this.#loading = ElLoading.service({
-                    //     lock: true,
-                    //     text: '等等等等, 快出来了....',
-                    //     background: 'rgba(255, 255, 255, .5)',
-                    // });
+                    this.#loading = ElLoading.service({
+                        lock: true,
+                        text: '等等等等, 快出来了....',
+                        background: 'rgba(255, 255, 255, .5)',
+                    });
                 }
 
                 // console.log(config);
@@ -54,10 +54,10 @@ class XRRequest {
         this.#instance.interceptors.response.use(
             (res) => {
                 // 等待请求完成移除loading
-                // this.#loading?.close();
-                // setTimeout(() => {
-                //     this.#loading?.close();
-                // }, 2000);
+                this.#loading?.close();
+                setTimeout(() => {
+                    this.#loading?.close();
+                }, 2000);
 
                 // 请求失败情况2: 状态码可能是200，但是返回的数据可能为空
                 const data = res.data;

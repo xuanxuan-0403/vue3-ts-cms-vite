@@ -12,6 +12,7 @@ import {
     ElHeader,
     ElAside,
     ElMain,
+    ElLoading,
 } from 'element-plus';
 
 const components = [ElButton, ElAffix, ElUpload, ElIcon, ElContainer, ElHeader, ElAside, ElMain];
