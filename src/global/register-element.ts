@@ -13,9 +13,22 @@ import {
     ElAside,
     ElMain,
     ElLoading,
+    ElTable,
+    ElTableColumn,
 } from 'element-plus';
 
-const components = [ElButton, ElAffix, ElUpload, ElIcon, ElContainer, ElHeader, ElAside, ElMain];
+const components = [
+    ElButton,
+    ElAffix,
+    ElUpload,
+    ElIcon,
+    ElContainer,
+    ElHeader,
+    ElAside,
+    ElMain,
+    ElTable,
+    ElTableColumn,
+];
 
 // icon
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';

@@ -1,7 +1,8 @@
 import { Store } from 'pinia';
 
 import type { ILoginState, IAccount } from './login/types';
-import { IMainState } from './main/types';
+import type { IMainState } from './main/types';
+import type { ISystemState } from './main/system/types';
 import { IUploadUserInfo } from '@/service/main/types';
 
 export interface IRootState {
@@ -20,7 +21,15 @@ export interface IRootState {
         IMainState,
         {},
         {
-            uploadAction(uploadUserInfo: IUploadUserInfo): any;
+            uploadAction(uploadUserInfo: IUploadUserInfo): Promise<any>;
+        }
+    >;
+    system: Store<
+        'system',
+        ISystemState,
+        {},
+        {
+            systemTableAction(userId: number): Promise<any>;
         }
     >;
 }
