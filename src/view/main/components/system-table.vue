@@ -2,8 +2,8 @@
     <div class="system-table">
         <el-table ref="multipleTableRef" style="width: 100%" :data="data">
             <el-table-column type="selection" width="55" />
-            <el-table-column property="date" label="上传日期" width="200" />
-            <el-table-column property="name" label="项目名称" width="200" />
+            <el-table-column property="date" label="上传日期" width="300" />
+            <el-table-column property="name" label="项目名称" width="300" />
             <el-table-column property="desc" label="项目描述" show-overflow-tooltip />
             <el-table-column fixed="right" label="Operations" width="150">
                 <template #default>
@@ -17,12 +17,12 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { ITableData } from '@/service/main/system/types';
+import { ITable } from '@/service/main/system/types';
 
 export default defineComponent({
     props: {
         data: {
-            type: Array as PropType<ITableData[]>,
+            type: Array as PropType<ITable[]>,
             required: true,
         },
     },
@@ -32,4 +32,8 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang=""></style>
+<style scoped lang="less">
+.system-table {
+    width: 100%;
+}
+</style>

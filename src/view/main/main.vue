@@ -9,8 +9,12 @@
                     <el-aside width="240px">
                         <NavMenu />
                     </el-aside>
-                    <el-main>
-                        <router-view></router-view>
+                    <el-main class="main-box">
+                        <router-view v-slot="{ Component }" mode="out-in">
+                            <transition name="router">
+                                <component :is="Component" />
+                            </transition>
+                        </router-view>
                     </el-main>
                 </el-container>
             </el-container>
@@ -48,6 +52,39 @@ export default defineComponent({
 }
 
 .el-main {
+    width: 100%;
     padding: 0 !important;
+    height: 80vh;
+}
+
+.main-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.router-enter-active,
+.router-leave-active {
+    position: absolute;
+    transition: all 0.85s ease;
+}
+
+.router-enter-from {
+    top: 3%;
+    opacity: 0;
+}
+
+.router-enter-to {
+    opacity: 1;
+    top: 0;
+}
+
+.router-leave-from {
+    opacity: 1;
+    top: 0;
+}
+
+.router-leave-to {
+    opacity: 0;
+    top: 3%;
 }
 </style>

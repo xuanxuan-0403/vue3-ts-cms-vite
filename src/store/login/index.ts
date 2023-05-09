@@ -10,7 +10,6 @@ export default defineStore('login', {
         return {
             name: 'login',
             showLoginReactivePage: false,
-            userId: null,
         };
     },
     actions: {
@@ -19,9 +18,8 @@ export default defineStore('login', {
             if (!data) return;
 
             LocalCache.setCache('token', data.token);
+            LocalCache.setCache('userid', data.userid);
             console.log(data.userid);
-            this.userId = data.userid;
-
             console.log(data.message);
 
             // 跳转到 main

@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="upload">
         <warning>请先输入描述, 再上传文件 !</warning>
 
-        <div class="upload">
+        <div class="upload-box">
             <div class="mockup-window border bg-base-300">
                 <div class="window flex justify-center px-4 py-16 bg-base-200">
                     <el-upload
@@ -82,7 +82,11 @@ export default defineComponent({
         flex: 1;
     }
 }
+
 .upload {
+    width: 100%;
+}
+.upload-box {
     display: flex;
     justify-content: space-between;
     flex-direction: column;

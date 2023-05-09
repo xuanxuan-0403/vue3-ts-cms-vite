@@ -35,6 +35,8 @@ export default defineComponent({
     setup() {
         const handleLogoutClick = () => {
             LocalCache.deleteCache('token');
+            LocalCache.deleteCache('userid');
+            LocalCache.deleteCache('systemTableData');
             window.location.reload();
         };
 

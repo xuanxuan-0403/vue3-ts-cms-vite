@@ -1,6 +1,5 @@
 export interface ILoginState {
     name: string;
-    userId: number | null;
     showLoginReactivePage: boolean;
 }
 

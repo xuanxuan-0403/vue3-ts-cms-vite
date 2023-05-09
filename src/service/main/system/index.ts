@@ -10,6 +10,8 @@ enum MainAPI {
 export function systemTableRequest(userId: number) {
     return xrRequest.post<ITableData>({
         url: BASE_URL + MainAPI.SystemTable,
-        data: userId,
+        data: {
+            userId,
+        },
     });
 }
