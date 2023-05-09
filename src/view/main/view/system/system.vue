@@ -24,7 +24,6 @@ export default defineComponent({
         const userid = LocalCache.getCache('userid');
         system.systemTableAction(userid as number);
         const data: ITableDataArr[] = LocalCache.getCache('systemTableData')[0];
-        console.log(data);
 
         const tableData: ITable[] = data.map((item) => {
             return {
