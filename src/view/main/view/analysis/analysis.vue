@@ -1,6 +1,6 @@
 <template>
     <div class="analysis">
-        <div class="stats shadow">
+        <div class="stats shadow w-auto">
             <div class="stat">
                 <div class="stat-figure text-primary">
                     <svg
@@ -69,4 +69,4 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="less"></style>

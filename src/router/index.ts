@@ -18,6 +18,10 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/view/main/main.vue'),
         children: [
             {
+                path: '/main',
+                redirect: '/main/analysis',
+            },
+            {
                 path: '/main/upload',
                 name: 'upload',
                 component: () => import('@/view/main/view/upload/upload.vue'),

@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed, ref } from 'vue';
 import SystemTable from '../../components/system-table.vue';
 import LocalCache from '@/utils/cache';
 import type { ITable, ITableDataArr } from '@/service/main/system/types';
@@ -23,15 +23,19 @@ export default defineComponent({
         const { system } = store;
         const userid = LocalCache.getCache('userid');
         system.systemTableAction(userid as number);
-        const data: ITableDataArr[] = LocalCache.getCache('systemTableData')[0];
-
-        const tableData: ITable[] = data.map((item) => {
-            return {
-                name: item.name,
-                desc: item.desc,
-                date: dayjs(item.createTime),
-            };
+        // const data = computed((): ITableDataArr[] => LocalCache.getCache('systemTableData'));
+        const data = computed((): ITableDataArr[] => system.tableData);
+        const tableData = computed(() => {
+            const tableData: ITable[] = data.value.map((item) => {
+                return {
+                    name: item.name,
+                    desc: item.desc,
+                    date: dayjs(item.createTime),
+                };
+            });
+            return tableData;
         });
+
         return {
             tableData,
         };

@@ -14,8 +14,8 @@ export interface ITable {
 export interface ITableDataArr {
     createTime: string;
     desc: string;
-    filepath: string;
-    htmlpath: string;
+    // filepath: string;
+    // htmlpath: string;
     id: number;
     name: string;
     userid: number;

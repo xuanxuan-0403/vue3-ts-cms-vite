@@ -11,7 +11,7 @@
                     </el-aside>
                     <el-main class="main-box">
                         <router-view v-slot="{ Component }" mode="out-in">
-                            <transition name="router">
+                            <transition name="router" appear>
                                 <component :is="Component" />
                             </transition>
                         </router-view>
@@ -44,6 +44,7 @@ export default defineComponent({
     width: 100vw;
     height: 100vh;
     padding: 3vh 3vw;
+    transition: all 0.5s;
 }
 
 .el-header {

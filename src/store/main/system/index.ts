@@ -8,6 +8,7 @@ export default defineStore('system', {
     state: (): ISystemState => {
         return {
             name: 'system',
+            tableData: [],
         };
     },
     actions: {
@@ -15,6 +16,7 @@ export default defineStore('system', {
             const data = await systemTableRequest(userId);
             if (!data) return;
             LocalCache.setCache('systemTableData', data.data);
+            this.tableData = data.data;
         },
     },
 });
