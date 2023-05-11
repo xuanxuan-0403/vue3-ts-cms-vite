@@ -1,6 +1,6 @@
 <template>
     <div class="nav-menu">
-        <ul class="menu bg-base-100 w-56 p-2 rounded-box">
+        <ul class="menu bg-base-100 w-56 p-2 rounded-box shadow-xl">
             <router-link to="/main/analysis">
                 <li>
                     <a>

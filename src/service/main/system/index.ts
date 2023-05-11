@@ -1,7 +1,7 @@
 import xrRequest from '@/service';
 
 import { BASE_URL } from '@/service/request/config';
-import { ITableData } from './types';
+import type { ITableData } from './types';
 
 enum MainAPI {
     SystemTable = '/system/tableData',
