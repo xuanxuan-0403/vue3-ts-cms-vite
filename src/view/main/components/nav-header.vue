@@ -2,7 +2,9 @@
     <div class="nav-header">
         <div class="navbar bg-base-100 shadow-xl">
             <div class="flex-1">
-                <a class="btn btn-ghost normal-case text-xl">WebGL管理系统</a>
+                <router-link to="/display">
+                    <a class="btn btn-ghost normal-case text-xl">WebGL管理系统</a>
+                </router-link>
             </div>
             <div class="flex-none gap-2">
                 <div class="form-control">
