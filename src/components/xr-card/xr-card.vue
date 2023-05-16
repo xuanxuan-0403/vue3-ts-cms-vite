@@ -2,7 +2,7 @@
     <div class="xr-card">
         <div class="card w-80 bg-base-100 shadow-xl">
             <figure>
-                <img :src="img" alt="Shoes" />
+                <img class="img" :src="imgUrl" alt="Shoes" />
             </figure>
             <div class="card-body">
                 <h2 class="card-title">{{ title }}</h2>
@@ -16,8 +16,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { random } from '@/utils/random';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
     props: {
@@ -25,9 +24,9 @@ export default defineComponent({
             type: String,
             default: 'Title',
         },
-        img: {
+        imgpath: {
             type: String,
-            default: `public/img${random(1, 3)}.jpg`,
+            default: `public/img2.jpg`,
         },
         desc: {
             type: String,
@@ -39,19 +38,24 @@ export default defineComponent({
         },
     },
     setup(props) {
+        const API = 'http://10.87.1.106:10000';
+        const img = props.imgpath.substring(11);
+        const imgUrl = ref(API + img);
         const handleGoClick = () => {
-            console.log(props.htmlpath);
-            const url = props.htmlpath.slice(11, props.htmlpath.length);
-            const htmlUrl = 'http://10.87.1.106:10000' + url;
-            // /home/local/egg-server-ts/app/public/webgl/6c7a5f68-5006-4697-bb75-5d23ab847af4/data-visualization/index.html
-            // http://10.87.1.106:10000/egg-server-ts/app/public/webgl/
+            const url = props.htmlpath.substring(11);
+            const htmlUrl = API + url;
             window.location.href = htmlUrl;
         };
         return {
             handleGoClick,
+            imgUrl,
         };
     },
 });
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.img {
+    height: 10vw;
+}
+</style>
