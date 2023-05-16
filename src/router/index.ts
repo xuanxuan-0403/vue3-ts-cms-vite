@@ -8,14 +8,14 @@ const routes: RouteRecordRaw[] = [
         redirect: '/display',
     },
     {
-        path: '/login',
-        name: 'login',
-        component: () => import('@/view/login/login.vue'),
-    },
-    {
         path: '/display',
         name: 'display',
         component: () => import('@/view/display/display.vue'),
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('@/view/login/login.vue'),
     },
     {
         path: '/main',
@@ -56,13 +56,15 @@ const router = createRouter({
  * 2. 读取 token ,如果没有, 则跳转到 /login
  */
 router.beforeEach((to, from, next) => {
-    if (to.path !== '/login') {
-        const token = LocalCache.getCache('token');
-        next();
-        if (!token) {
+    if (to.path == '/login') next();
+    if (!LocalCache.getCache('token')) {
+        if (to.path == '/display') {
             next();
-            return '/display';
+        } else {
+            next({ path: '/login' });
         }
+    } else {
+        next();
     }
 });
 

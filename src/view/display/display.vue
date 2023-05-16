@@ -1,9 +1,14 @@
 <template>
     <div class="display">
         <div class="list">
-            <template v-for="data in tableData">
-                <XrCard class="xr-card" v-bind="data" :title="data.name" />
-            </template>
+            <el-row :gutter="20">
+                <template v-for="data in tableData">
+                    <el-col :span="6"
+                        ><div class="grid-content ep-bg-purple" />
+                        <XrCard class="xr-card" v-bind="data" :title="data.name" />
+                    </el-col>
+                </template>
+            </el-row>
         </div>
         <router-link to="/login">
             <div class="login">
@@ -60,11 +65,6 @@ export default defineComponent({
     position: relative;
     padding: 5vh 8vw;
     transition: all 0.5s;
-    .list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
 
     .xr-card {
         margin-bottom: 2vw;

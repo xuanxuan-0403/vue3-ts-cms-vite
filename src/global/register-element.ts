@@ -15,6 +15,8 @@ import {
     ElLoading,
     ElTable,
     ElTableColumn,
+    ElRow,
+    ElCol,
 } from 'element-plus';
 
 const components = [
@@ -28,6 +30,8 @@ const components = [
     ElMain,
     ElTable,
     ElTableColumn,
+    ElRow,
+    ElCol,
 ];
 
 // icon
