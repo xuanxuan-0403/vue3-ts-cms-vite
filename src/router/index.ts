@@ -55,17 +55,14 @@ const router = createRouter({
  * 1. 判断路径是否为 /login
  * 2. 读取 token ,如果没有, 则跳转到 /login
  */
-router.beforeEach((to) => {
+router.beforeEach((to, from, next) => {
     if (to.path !== '/login') {
         const token = LocalCache.getCache('token');
+        next();
         if (!token) {
+            next();
             return '/display';
         }
-    }
-
-    if (to.path === '/main') {
-        // /main的重定向
-        // return firstMenu.url;
     }
 });
 
