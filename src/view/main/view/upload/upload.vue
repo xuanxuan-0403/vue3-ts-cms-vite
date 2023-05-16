@@ -5,25 +5,47 @@
         <div class="upload-box">
             <div class="mockup-window border bg-base-300">
                 <div class="window flex justify-center px-4 py-16 bg-base-200">
-                    <el-upload
-                        class="upload-demo"
-                        drag
-                        :action="url"
-                        :multiple="true"
-                        accept=".zip, .png, .jpg , .jpeg"
-                        :data="{ userId, desc, projectName }"
-                        :disabled="isUploadDisabled"
-                    >
-                        <el-icon class="el-icon--upload"><upload-filled /></el-icon>
-                        <div class="el-upload__text">
-                            把项目压缩包拖拽到这里, <em>或者点击上传</em>
-                        </div>
-                        <template #tip>
-                            <div class="el-upload__tip">
-                                　.zip / .png / .jpg / .jpeg 限制为1000mb
+                    <div class="uploadZip">
+                        <el-upload
+                            class="upload-demo"
+                            drag
+                            :action="zipAPI"
+                            :multiple="false"
+                            accept=".zip, .png, .jpg"
+                            :data="{ userId, desc, projectName }"
+                            :disabled="isUploadDisabled"
+                            :on-success="onUploadSuccess"
+                        >
+                            <el-icon class="el-icon--upload"><upload-filled /></el-icon>
+                            <div class="el-upload__text">
+                                把项目压缩包拖拽到这里, <em>或者点击上传</em>
                             </div>
-                        </template>
-                    </el-upload>
+                            <template #tip>
+                                <div class="el-upload__tip">　.zip / .png / .jpg 限制为1000mb</div>
+                            </template>
+                        </el-upload>
+                    </div>
+                    <div class="uploadImg">
+                        <el-upload
+                            :action="imgAPI"
+                            list-type="picture-card"
+                            :auto-upload="true"
+                            :disabled="isUploadImgDisabled"
+                            accept=".png, .jpg"
+                            :data="{ userId, desc, projectName }"
+                        >
+                            <el-icon><Plus /></el-icon>
+                            <template #file="{ file }">
+                                <div>
+                                    <img
+                                        class="el-upload-list__item-thumbnail"
+                                        :src="file.url"
+                                        alt=""
+                                    />
+                                </div>
+                            </template>
+                        </el-upload>
+                    </div>
                 </div>
             </div>
             <div class="desc">
@@ -56,6 +78,7 @@ import warning from '@/components/warning';
 import LocalCache from '@/utils/cache';
 
 const store = useStore();
+const { login } = store;
 
 export default defineComponent({
     name: 'upload',
@@ -63,22 +86,31 @@ export default defineComponent({
         warning,
     },
     setup() {
-        const url = 'http://10.87.1.106:7001/upload/';
-        const { login } = store;
+        const zipAPI = 'http://10.87.1.106:7001/upload/';
+        const imgAPI = 'http://10.87.1.106:7001/uploadImage/';
+
         const userId = LocalCache.getCache('userid');
         let isUploadDisabled = ref(true);
+        let isUploadImgDisabled = ref(true);
         const desc = ref<string>();
         const projectName = ref<string>();
         watch(projectName, (oldValue, newValue) => {
             newValue != '' ? (isUploadDisabled.value = false) : (isUploadDisabled.value = true);
         });
 
+        const onUploadSuccess = () => {
+            isUploadImgDisabled.value = false;
+        };
+
         return {
-            url,
+            zipAPI,
+            imgAPI,
             userId,
             desc,
             projectName,
             isUploadDisabled,
+            isUploadImgDisabled,
+            onUploadSuccess,
         };
     },
 });
@@ -94,9 +126,13 @@ export default defineComponent({
 .window {
     padding: 0;
     display: flex;
+    justify-content: space-between;
 
-    div {
-        flex: 1;
+    .uploadZip {
+        width: 70%;
+    }
+    .uploadImg {
+        width: 30%;
     }
 }
 
@@ -119,5 +155,43 @@ export default defineComponent({
             padding: 0;
         }
     }
+}
+</style>
+<style lang="less">
+.avatar-uploader .el-upload {
+    border: 1px dashed var(--el-border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: var(--el-transition-duration-fast);
+}
+
+.avatar-uploader .el-upload:hover {
+    border-color: var(--el-color-primary);
+}
+
+.el-icon.avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    text-align: center;
+}
+
+.uploadImg {
+    .el-upload {
+        background-color: #fff;
+        width: 178px;
+        height: 178px;
+    }
+    .el-upload-list__item {
+        width: 178px;
+        height: 178px;
+    }
+}
+
+.el-upload-dragger {
+    height: 178px;
 }
 </style>
