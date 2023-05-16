@@ -2,7 +2,7 @@
     <div class="display">
         <div class="list">
             <template v-for="data in tableData">
-                <XrCard class="xr-card" v-bind="data" />
+                <XrCard class="xr-card" v-bind="data" :title="data.name" />
             </template>
         </div>
         <router-link to="/login">
@@ -55,6 +55,8 @@ export default defineComponent({
 
 <style lang="less">
 .display {
+    width: 100vw;
+    height: 100vh;
     position: relative;
     padding: 5vh 8vw;
     transition: all 0.5s;
@@ -71,7 +73,7 @@ export default defineComponent({
     .login {
         position: fixed;
         right: 3vw;
-        bottom: 3vw;
+        top: 3vw;
 
         button {
             padding: 0;

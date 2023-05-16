@@ -1,6 +1,6 @@
 <template>
     <div class="upload">
-        <warning>请先输入描述, 再上传文件 !</warning>
+        <warning>请先输入项目名称, 描述, 再上传文件 !</warning>
 
         <div class="upload-box">
             <div class="mockup-window border bg-base-300">
@@ -8,9 +8,9 @@
                     <el-upload
                         class="upload-demo"
                         drag
-                        action="http://10.87.1.106:7001/upload"
-                        :multiple="false"
-                        accept=".zip, .rar, .7z"
+                        :action="url"
+                        :multiple="true"
+                        accept=".zip, .png, .jpg , .jpeg"
                         :data="{ userId, desc, projectName }"
                         :disabled="isUploadDisabled"
                     >
@@ -19,25 +19,9 @@
                             把项目压缩包拖拽到这里, <em>或者点击上传</em>
                         </div>
                         <template #tip>
-                            <div class="el-upload__tip">　.zip / .rar / .7z 限制为1000mb</div>
-                        </template>
-                    </el-upload>
-
-                    <el-upload
-                        class="upload-demo"
-                        drag
-                        action="http://10.87.1.106:7001/upload/img"
-                        :multiple="false"
-                        accept=".png, .jpg, .jpeg"
-                        :data="{ userId }"
-                        :disabled="isUploadDisabled"
-                    >
-                        <el-icon class="el-icon--upload"><upload-filled /></el-icon>
-                        <div class="el-upload__text">
-                            把项目预览图片拖拽到这里, <em>或者点击上传</em>
-                        </div>
-                        <template #tip>
-                            <div class="el-upload__tip">　.png / .jpg / .jpeg 限制为20mb</div>
+                            <div class="el-upload__tip">
+                                　.zip / .png / .jpg / .jpeg 限制为1000mb
+                            </div>
                         </template>
                     </el-upload>
                 </div>
@@ -79,16 +63,18 @@ export default defineComponent({
         warning,
     },
     setup() {
+        const url = 'http://10.87.1.106:7001/upload/';
         const { login } = store;
         const userId = LocalCache.getCache('userid');
         let isUploadDisabled = ref(true);
         const desc = ref<string>();
         const projectName = ref<string>();
-        watch(desc, (oldValue, newValue) => {
+        watch(projectName, (oldValue, newValue) => {
             newValue != '' ? (isUploadDisabled.value = false) : (isUploadDisabled.value = true);
         });
 
         return {
+            url,
             userId,
             desc,
             projectName,

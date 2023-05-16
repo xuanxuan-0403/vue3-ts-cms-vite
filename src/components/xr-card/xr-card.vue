@@ -8,7 +8,7 @@
                 <h2 class="card-title">{{ title }}</h2>
                 <p>{{ desc }}</p>
                 <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Go~ !</button>
+                    <button class="btn btn-primary" @click="handleGoClick">Go~ !</button>
                 </div>
             </div>
         </div>
@@ -17,6 +17,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { random } from '@/utils/random';
 
 export default defineComponent({
     props: {
@@ -26,15 +27,29 @@ export default defineComponent({
         },
         img: {
             type: String,
-            default: 'public/img2.jpg',
+            default: `public/img${random(1, 3)}.jpg`,
         },
         desc: {
             type: String,
             default: '描述呢 ? ',
         },
+        htmlpath: {
+            type: String,
+            default: '',
+        },
     },
-    setup() {
-        return {};
+    setup(props) {
+        const handleGoClick = () => {
+            console.log(props.htmlpath);
+            const url = props.htmlpath.slice(11, props.htmlpath.length);
+            const htmlUrl = 'http://10.87.1.106:10000' + url;
+            // /home/local/egg-server-ts/app/public/webgl/6c7a5f68-5006-4697-bb75-5d23ab847af4/data-visualization/index.html
+            // http://10.87.1.106:10000/egg-server-ts/app/public/webgl/
+            window.location.href = htmlUrl;
+        };
+        return {
+            handleGoClick,
+        };
     },
 });
 </script>
