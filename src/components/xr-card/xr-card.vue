@@ -38,11 +38,11 @@ export default defineComponent({
         },
     },
     setup(props) {
-        const API = 'http://10.87.1.106:10000';
-        const img = props.imgpath.substring(11);
+        const API = 'http://10.87.1.106:11451';
+        const img = props.imgpath.substring(36);
         const imgUrl = ref(API + img);
         const handleGoClick = () => {
-            const url = props.htmlpath.substring(11);
+            const url = props.htmlpath.substring(36);
             const htmlUrl = API + url;
             window.location.href = htmlUrl;
         };
