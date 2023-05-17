@@ -6,6 +6,7 @@ export interface ITableData {
 }
 
 export interface ITable {
+    id: number;
     date: any;
     name: string;
     desc: string;

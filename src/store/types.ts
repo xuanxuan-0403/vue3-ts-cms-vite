@@ -31,6 +31,7 @@ export interface IRootState {
         {},
         {
             systemTableAction(userId: number): Promise<any>;
+            systemDeleteTableAction(id: number): void;
         }
     >;
     display: Store<

@@ -1,6 +1,6 @@
 <template>
     <div class="system">
-        <SystemTable :data="tableData" />
+        <SystemTable :data="tableData" :deleteTableEmit="deleteTableEmit" />
     </div>
 </template>
 
@@ -24,8 +24,13 @@ export default defineComponent({
         system.systemTableAction(userid as number);
         const tableData = computed((): ITable[] => system.tableList);
 
+        const deleteTableEmit = (id: number) => {
+            console.log(id);
+        };
+
         return {
             tableData,
+            deleteTableEmit,
         };
     },
 });

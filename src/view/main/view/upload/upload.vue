@@ -11,7 +11,7 @@
                             drag
                             :action="zipAPI"
                             :multiple="false"
-                            accept=".zip, .png, .jpg"
+                            accept=".zip"
                             :data="{ userId, desc, projectName }"
                             :disabled="isUploadDisabled"
                             :on-success="onUploadSuccess"

@@ -39,8 +39,13 @@ export default defineComponent({
     },
     setup(props) {
         const API = 'http://10.87.1.106:11451';
-        const img = props.imgpath.substring(36);
-        const imgUrl = ref(API + img);
+        const imgUrl = ref<string>();
+        if (props.imgpath) {
+            const img = props.imgpath.substring(36);
+            imgUrl.value = API + img;
+        } else {
+            imgUrl.value = 'public/img2.jpg';
+        }
         const handleGoClick = () => {
             const url = props.htmlpath.substring(36);
             const htmlUrl = API + url;
