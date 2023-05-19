@@ -19,8 +19,7 @@ export function systemTableRequest(userId: number) {
 
 export function systemDeleteTableRequest(id: number, userId?: number) {
     return xrRequest.post({
-        // url: BASE_URL + MainAPI.DeleteSystemTable,
-        url: 'http://127.0.0.1:7001/api/system/delete',
+        url: BASE_URL + MainAPI.DeleteSystemTable,
         data: {
             id,
             userId,

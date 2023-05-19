@@ -20,6 +20,7 @@ export default defineComponent({
     },
     setup() {
         const { system } = store;
+
         const userid = LocalCache.getCache('userid');
         system.systemTableAction(userid as number);
         const tableData = computed((): ITable[] => system.tableList);

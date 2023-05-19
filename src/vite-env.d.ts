@@ -6,3 +6,8 @@ declare module '*.vue' {
 }
 
 declare module 'presetDaisy' {}
+
+declare const $filters: {
+    foo(): void;
+    formatTime(value: string): any;
+};

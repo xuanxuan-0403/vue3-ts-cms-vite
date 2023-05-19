@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import type { ISystemState } from './types';
 import { systemTableRequest, systemDeleteTableRequest } from '@/service/main/system';
-import dayjs from 'dayjs';
+import { formatUtcString } from '@/utils/date-format';
 
 import LocalCache from '@/utils/cache';
 
@@ -24,7 +24,7 @@ export default defineStore('system', {
                     id: item.id,
                     name: item.name,
                     desc: item.desc,
-                    date: dayjs(item.createTime),
+                    date: formatUtcString(item.createTime),
                 };
             });
             this.tableList = tableList;

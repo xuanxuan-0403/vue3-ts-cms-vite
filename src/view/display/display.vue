@@ -1,5 +1,6 @@
 <template>
     <div class="display">
+        <!-- <img class="setu" src="https://image.anosu.top/pixiv/direct?r18=0" alt="" /> -->
         <div class="list">
             <el-row :gutter="20">
                 <template v-for="data in tableData">
@@ -65,6 +66,13 @@ export default defineComponent({
     position: relative;
     padding: 5vh 8vw;
     transition: all 0.5s;
+    overflow-x: hidden;
+    .setu {
+        position: absolute;
+        width: 100vw;
+        top: 0;
+        left: 0;
+    }
 
     .xr-card {
         margin-bottom: 2vw;
