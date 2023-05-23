@@ -8,6 +8,7 @@ export interface ILoginResult {
     status: number;
     token: string;
     userid: number;
+    router: any[];
 }
 
 export interface IRegisterResult {
