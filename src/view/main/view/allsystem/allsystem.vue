@@ -1,17 +1,37 @@
 <template>
     <div class="allsystem">
-        <h2>allsystem</h2>
+        <SystemTable :data="tableData" />
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
+import SystemTable from '../../components/system-table.vue';
+import type { ITable } from '@/service/main/system/types';
+
+import { useStore } from '@/store';
+const store = useStore();
 
 export default defineComponent({
+    components: {
+        SystemTable,
+    },
     setup() {
-        return {};
+        const { display } = store;
+        const tableData = computed((): ITable[] => display.allTableList);
+
+        return {
+            tableData,
+        };
     },
 });
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.allsystem {
+    overflow: hidden;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 1em;
+}
+</style>
