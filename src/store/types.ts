@@ -40,6 +40,7 @@ export interface IRootState {
         {},
         {
             AllDisplayDataAction(): Promise<any>;
+            AllAuditDataAction(): Promise<any>;
         }
     >;
 }

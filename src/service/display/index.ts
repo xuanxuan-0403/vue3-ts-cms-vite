@@ -8,7 +8,19 @@ enum MainAPI {
 }
 
 export function AllDisplayTableRequest() {
-    return xrRequest.get<ITableData>({
+    return xrRequest.post<ITableData>({
         url: BASE_URL + MainAPI.AllSystemTable,
+        data: {
+            audit: 1,
+        },
+    });
+}
+
+export function AllAuditTableRequest() {
+    return xrRequest.post<ITableData>({
+        url: BASE_URL + MainAPI.AllSystemTable,
+        data: {
+            audit: 0,
+        },
     });
 }

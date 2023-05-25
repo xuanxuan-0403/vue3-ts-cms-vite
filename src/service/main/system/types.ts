@@ -10,6 +10,7 @@ export interface ITable {
     date: any;
     name: string;
     desc: string;
+    isAudit: number;
 }
 
 export interface ITableDataArr {

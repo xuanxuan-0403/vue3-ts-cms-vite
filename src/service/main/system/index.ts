@@ -6,6 +6,7 @@ import type { ITableData } from './types';
 enum MainAPI {
     SystemTable = '/system/tableData',
     DeleteSystemTable = '/system/delete',
+    ChangeAudit = '/system/audit',
 }
 
 export function systemTableRequest(userId: number) {
@@ -23,6 +24,16 @@ export function systemDeleteTableRequest(id: number, userId?: number) {
         data: {
             id,
             userId,
+        },
+    });
+}
+
+export function systemChangeAuditRequest(id: number, userid: number) {
+    return xrRequest.post({
+        url: BASE_URL + MainAPI.ChangeAudit,
+        data: {
+            id,
+            userid,
         },
     });
 }

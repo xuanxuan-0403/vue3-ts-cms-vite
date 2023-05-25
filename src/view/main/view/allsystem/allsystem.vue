@@ -1,24 +1,26 @@
 <template>
     <div class="allsystem">
-        <SystemTable :data="tableData" />
+        <CardContainer :is-show="false" :table-data="tableData" />
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import SystemTable from '../../components/system-table.vue';
 import type { ITable } from '@/service/main/system/types';
+import CardContainer from '../../components/card-container/card-container.vue';
 
 import { useStore } from '@/store';
 const store = useStore();
 
 export default defineComponent({
     components: {
-        SystemTable,
+        CardContainer,
     },
     setup() {
         const { display } = store;
-        const tableData = computed((): ITable[] => display.allTableList);
+        display.AllAuditDataAction();
+
+        const tableData = computed((): ITable[] => display.allAuditTableList);
 
         return {
             tableData,

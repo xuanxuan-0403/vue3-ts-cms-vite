@@ -8,6 +8,7 @@
                 <h2 class="card-title">{{ title }}</h2>
                 <p>{{ desc }}</p>
                 <div class="card-actions justify-end">
+                    <slot></slot>
                     <button class="btn btn-primary" @click="handleGoClick">Go~ !</button>
                 </div>
             </div>
@@ -59,8 +60,13 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 .img {
     height: 10vw;
+}
+.card-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 </style>
