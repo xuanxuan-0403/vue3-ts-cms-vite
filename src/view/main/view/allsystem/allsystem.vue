@@ -31,7 +31,7 @@ export default defineComponent({
 
 <style scoped lang="less">
 .allsystem {
-    overflow: hidden;
+    // overflow: hidden;
     padding: 0.5rem;
     background-color: #fff;
     border-radius: 1em;

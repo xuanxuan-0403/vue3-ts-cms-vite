@@ -28,4 +28,12 @@ export default defineComponent({
 });
 </script>
 
-<style lang="less"></style>
+<style lang="less">
+.display {
+    transition: all 0.5s;
+    width: 100vw;
+    height: 100vh;
+    padding: 5vh 8vw;
+    overflow: hidden;
+}
+</style>

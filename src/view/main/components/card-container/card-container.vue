@@ -82,10 +82,9 @@ export default defineComponent({
 
 <style lang="less">
 .card-container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: relative;
-    padding: 5vh 8vw;
     transition: all 0.5s;
     overflow-x: hidden;
     .setu {
