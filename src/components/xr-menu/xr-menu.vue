@@ -22,7 +22,7 @@ const login = useStore().login;
 
 export default defineComponent({
     setup() {
-        const router = computed(() => login.router);
+        const router = computed(() => login.userMenu);
         return {
             router,
         };

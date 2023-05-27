@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia';
 import type { IMainState } from './types';
 import { IUploadUserInfo } from '@/service/main/types';
-import router from '@/router';
 
 import { uploadRequest } from '@/service/main/index';
 

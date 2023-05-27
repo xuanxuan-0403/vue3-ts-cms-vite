@@ -15,6 +15,7 @@ export interface IRootState {
         {
             accountLoginAction(account: IAccount): Promise<any>;
             accountRegisterAction(account: IAccount): Promise<any>;
+            loadLocalLogin(): any;
         }
     >;
     main: Store<

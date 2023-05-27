@@ -18,3 +18,10 @@ export const useStore = defineStore('root', {
         };
     },
 });
+
+// 初始化 store
+export function setupStore() {
+    const store = useStore();
+    const { login } = store;
+    login.loadLocalLogin();
+}

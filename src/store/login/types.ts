@@ -1,4 +1,5 @@
 export interface ILoginState {
+    token: string;
     name: string;
     showLoginReactivePage: boolean;
     userMenu: any[];

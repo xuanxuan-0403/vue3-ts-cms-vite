@@ -10,10 +10,12 @@ import router from './router';
 import { globalRegister } from './global';
 
 const pinia = createPinia();
+import { setupStore } from './store';
 const app = createApp(App);
 
 globalRegister(app);
-app.use(router);
 app.use(pinia);
+setupStore();
+app.use(router);
 
 app.mount('#app');

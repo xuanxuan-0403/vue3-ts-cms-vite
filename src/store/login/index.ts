@@ -10,6 +10,7 @@ export default defineStore('login', {
     state: (): ILoginState => {
         return {
             name: 'login',
+            token: '',
             showLoginReactivePage: false,
             userMenu: [],
         };
@@ -27,10 +28,12 @@ export default defineStore('login', {
 
             // 注册动态路由
             const routes = mapMenusToRoutes(data.router);
+            console.log('--------------', routes);
             routes.then((res) => {
                 res.forEach((route) => {
                     router.addRoute('main', route);
                 });
+                LocalCache.setCache('userMenu', res);
             });
 
             // 跳转到 main
@@ -42,6 +45,14 @@ export default defineStore('login', {
             if (!data) return;
             console.log(data.message);
             alert(data.message);
+        },
+        loadLocalLogin() {
+            console.log('--------------------');
+            const token = LocalCache.getCache('token');
+            if (token) this.token = token;
+
+            const userMenu = LocalCache.getCache('userMenu');
+            if (userMenu) this.userMenu = userMenu;
         },
     },
 });
