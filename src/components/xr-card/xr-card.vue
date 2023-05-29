@@ -1,10 +1,12 @@
 <template>
     <div class="xr-card">
-        <div class="card w-80 bg-base-100 shadow-xl">
-            <figure>
-                <img class="img" :src="imgUrl" alt="Shoes" />
-            </figure>
-            <div class="card-body">
+        <div class="card w-80 h-96 bg-base-100 shadow-xl">
+            <div class="p-3">
+                <figure>
+                    <img class="img" :src="imgUrl" alt="Shoes" />
+                </figure>
+            </div>
+            <div class="card-body px-7 py-4">
                 <h2 class="card-title">{{ title }}</h2>
                 <p>{{ desc }}</p>
                 <div class="card-actions justify-end">
