@@ -2,21 +2,15 @@
 
 * 展示页面
 
-![image-20230601103726733](./../../../B_%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/MarkDown/trachment/image-20230601103726733.png)
-
-
+<img src="assets/docs/img/image-20230601103726733.png">
 
 * 登录页
 
-![image-20230601103750979](./../../../B_%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/MarkDown/trachment/image-20230601103750979.png)
-
-
+<img src="assets/docs/img/image-20230601103750979.png">
 
 * 管理页面
 
-![image-20230601103807236](./../../../B_%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/MarkDown/trachment/image-20230601103807236.png)
-
-
+<img src="assets/docs/img/image-20230601103807236.png">
 
 # 技术栈
 
