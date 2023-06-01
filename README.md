@@ -2,15 +2,15 @@
 
 * 展示页面
 
-<img src="assets/docs/img/image-20230601103726733.png">
+<img src="/src/assets/docs/img/image-20230601103726733.png">
 
 * 登录页
 
-<img src="assets/docs/img/image-20230601103750979.png">
+<img src="/src/assets/docs/img/image-20230601103750979.png">
 
 * 管理页面
 
-<img src="assets/docs/img/image-20230601103807236.png">
+<img src="/src/assets/docs/img/image-20230601103807236.png">
 
 # 技术栈
 
