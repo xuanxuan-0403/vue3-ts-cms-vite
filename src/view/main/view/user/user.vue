@@ -1,15 +1,26 @@
 <template>
     <div class="user">
-        <h2>user</h2>
+        <SystemTable :data="allUser"></SystemTable>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
+import SystemTable from '../../components/system-table.vue';
+import { useStore } from '@/store';
+const store = useStore();
 
 export default defineComponent({
+    components: {
+        SystemTable,
+    },
     setup() {
-        return {};
+        const { system } = store;
+        system.getAllUserAction();
+        const allUser = computed(() => system.allUser);
+        return {
+            allUser,
+        };
     },
 });
 </script>

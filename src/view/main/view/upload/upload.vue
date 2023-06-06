@@ -76,6 +76,7 @@ import { UploadFilled } from '@element-plus/icons-vue';
 import { useStore } from '@/store';
 import warning from '@/components/warning';
 import LocalCache from '@/utils/cache';
+import { BASE_HOST } from '@/service/request/config';
 
 const store = useStore();
 const { login } = store;
@@ -86,8 +87,8 @@ export default defineComponent({
         warning,
     },
     setup() {
-        const zipAPI = 'http://10.87.1.106:7001/upload/';
-        const imgAPI = 'http://10.87.1.106:7001/uploadImage/';
+        const zipAPI = `${BASE_HOST}/upload/`;
+        const imgAPI = `${BASE_HOST}/uploadImage/`;
 
         const userId = LocalCache.getCache('userid');
         let isUploadDisabled = ref(true);

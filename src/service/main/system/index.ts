@@ -7,6 +7,7 @@ enum MainAPI {
     SystemTable = '/system/tableData',
     DeleteSystemTable = '/system/delete',
     ChangeAudit = '/system/audit',
+    GetAllUser = '/allUser',
 }
 
 export function systemTableRequest(userId: number) {
@@ -35,5 +36,11 @@ export function systemChangeAuditRequest(id: number, userid: number) {
             id,
             userid,
         },
+    });
+}
+
+export function getAllUserRequest() {
+    return xrRequest.get({
+        url: BASE_URL + MainAPI.GetAllUser,
     });
 }

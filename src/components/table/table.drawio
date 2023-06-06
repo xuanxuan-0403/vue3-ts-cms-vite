@@ -1,0 +1,76 @@
+<mxfile host="65bd71144e">
+    <diagram id="ZoVkYnA7XwDhmTgUKKF6" name="第 1 页">
+        <mxGraphModel dx="394" dy="641" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="150" width="150" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="拿到propList&lt;br&gt;v-for遍例&lt;br&gt;展示数据&lt;br&gt;(el-table可以传入插槽)" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="150" width="150" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="280" y="185" as="sourcePoint"/>
+                        <mxPoint x="450" y="185" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="使用封装好的table组件" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="160" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="user.vue" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="120" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="table.vue" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="495" y="120" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="传入propList" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="180" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="endArrow=classic;html=1;entryX=-0.024;entryY=0.807;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="281.8" y="250" as="sourcePoint"/>
+                        <mxPoint x="448.2" y="251.04999999999995" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="传入插槽" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="331.8" y="230" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;div style=&quot;color: rgb(221, 221, 221); background-color: rgb(34, 34, 34); font-family: &amp;quot;operator mono&amp;quot;, consolas, &amp;quot;courier new&amp;quot;, monospace; font-weight: normal; font-size: 16px; line-height: 22px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #dddddd&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;xr-table&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color: #bd93db ; font-weight: bold&quot;&gt;listData&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #69b397&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #e0ba91&quot;&gt;userList&lt;/span&gt;&lt;span style=&quot;color: #69b397&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color: #bd93db ; font-weight: bold&quot;&gt;propList&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #69b397&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #e0ba91&quot;&gt;propList&lt;/span&gt;&lt;span style=&quot;color: #69b397&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #dddddd&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;template&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;#&lt;/span&gt;&lt;span style=&quot;color: #bd93db ; font-weight: bold&quot;&gt;status&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #69b397&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #e0ba91&quot;&gt;scope&lt;/span&gt;&lt;span style=&quot;color: #69b397&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #dddddd&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;el-button&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt;{{ &lt;/span&gt;&lt;span style=&quot;color: #e0ba91&quot;&gt;scope&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #e0ba91&quot;&gt;row&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #e0ba91&quot;&gt;enable&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #ffffff ; font-weight: bold&quot;&gt;?&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #69b397&quot;&gt;'启用'&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #ffffff ; font-weight: bold&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #69b397&quot;&gt;'禁用'&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt; }}&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;el-button&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #dddddd&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;template&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #dddddd&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;template&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;#&lt;/span&gt;&lt;span style=&quot;color: #bd93db ; font-weight: bold&quot;&gt;createAt&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #69b397&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #e0ba91&quot;&gt;scope&lt;/span&gt;&lt;span style=&quot;color: #69b397&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #dddddd&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;strong&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt;{{ &lt;/span&gt;&lt;span style=&quot;color: #e0ba91&quot;&gt;scope&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #e0ba91&quot;&gt;row&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #e0ba91&quot;&gt;createAt&lt;/span&gt;&lt;span style=&quot;color: #dddddd&quot;&gt; }}&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;strong&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #dddddd&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;template&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #dddddd&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color: #e18db9&quot;&gt;xr-table&lt;/span&gt;&lt;span style=&quot;color: #ffffff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="360" width="770" height="217.61" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;span&gt;user.vue&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="125" y="660" width="97.61" height="97.61" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;span&gt;table.vue&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="356.19" y="660" width="97.61" height="97.61" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="16" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="222.61" y="710" as="sourcePoint"/>
+                        <mxPoint x="272.61" y="660" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="传入propList, listData" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="680" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&lt;span&gt;user.vue&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="660" width="97.61" height="97.61" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="16" target="20">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="450" y="709" as="sourcePoint"/>
+                        <mxPoint x="500" y="660" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="v-for遍例" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="375" y="710" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="传入插槽" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="710" width="80" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

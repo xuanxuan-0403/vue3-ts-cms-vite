@@ -33,6 +33,7 @@ export interface IRootState {
         {
             systemTableAction(userId: number): Promise<any>;
             systemDeleteTableAction(id: number): void;
+            getAllUserAction(): void;
         }
     >;
     display: Store<

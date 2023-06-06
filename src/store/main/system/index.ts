@@ -1,6 +1,10 @@
 import { defineStore } from 'pinia';
 import type { ISystemState } from './types';
-import { systemTableRequest, systemDeleteTableRequest } from '@/service/main/system';
+import {
+    systemTableRequest,
+    systemDeleteTableRequest,
+    getAllUserRequest,
+} from '@/service/main/system';
 import { formatUtcString } from '@/utils/date-format';
 
 import LocalCache from '@/utils/cache';
@@ -11,6 +15,7 @@ export default defineStore('system', {
             name: 'system',
             tableData: [],
             tableList: [],
+            allUser: [],
         };
     },
     actions: {
@@ -33,6 +38,11 @@ export default defineStore('system', {
             const result = await systemDeleteTableRequest(id);
             const userid = LocalCache.getCache('userid');
             this.systemTableAction(userid);
+        },
+        async getAllUserAction() {
+            const data = await getAllUserRequest();
+            if (!data) return;
+            this.allUser = data.data;
         },
     },
 });
