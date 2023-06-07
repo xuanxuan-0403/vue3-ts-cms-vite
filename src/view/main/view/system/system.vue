@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
-import SystemTable from '../../components/system-table.vue';
+import SystemTable from '@/components/system-table/system-table.vue';
 import type { ITable } from '@/service/main/system/types';
 
 import { useStore } from '@/store';
