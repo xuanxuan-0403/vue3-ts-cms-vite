@@ -1,6 +1,10 @@
 <template>
     <div class="system">
-        <SystemTable :data="tableData" :deleteTableEmit="deleteTableEmit" />
+        <SystemTable
+            :config="contentTableConfig"
+            :data="tableData"
+            :deleteTableEmit="deleteTableEmit"
+        />
     </div>
 </template>
 
@@ -8,6 +12,7 @@
 import { defineComponent, computed } from 'vue';
 import SystemTable from '@/components/system-table/system-table.vue';
 import type { ITable } from '@/service/main/system/types';
+import { contentTableConfig } from './config/content.config';
 
 import { useStore } from '@/store';
 import LocalCache from '@/utils/cache';
@@ -32,6 +37,7 @@ export default defineComponent({
         return {
             tableData,
             deleteTableEmit,
+            contentTableConfig,
         };
     },
 });

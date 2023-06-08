@@ -15,6 +15,7 @@ export interface contentTableType {
     propList: propListType[];
     showIndexColumn?: boolean;
     showSelectColumn?: boolean;
+    showUpdateColumn: boolean;
     showFooter?: boolean;
     childrenProps?: childrenPropsType;
 }

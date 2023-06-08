@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Do Hyeon', '苹方', sans-serif;
 }
 
 body {
-    background: #eff0f5;
+    background: #bec3ce;
     /* max-width: 790px; */
 }
 

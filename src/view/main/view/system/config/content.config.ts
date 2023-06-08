@@ -9,11 +9,6 @@ export const contentTableConfig: contentTableType = {
             minWidth: '',
         },
         {
-            prop: 'userid',
-            label: 'userid',
-            minWidth: '',
-        },
-        {
             prop: 'name',
             label: '项目名称',
             minWidth: '',
@@ -23,7 +18,13 @@ export const contentTableConfig: contentTableType = {
             label: '项目描述',
             minWidth: '',
         },
+        {
+            prop: 'date',
+            label: '上传日期',
+            minWidth: '',
+        },
     ],
     showIndexColumn: false,
     showSelectColumn: false,
+    showUpdateColumn: false,
 };

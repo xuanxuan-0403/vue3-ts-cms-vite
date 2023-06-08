@@ -26,4 +26,5 @@ export const contentTableConfig: contentTableType = {
     ],
     showIndexColumn: false,
     showSelectColumn: false,
+    showUpdateColumn: true,
 };

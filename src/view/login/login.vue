@@ -55,6 +55,10 @@ export default defineComponent({
 <style scoped lang="less">
 @import './css/login.less';
 
+.login {
+    background-color: #eff0f5;
+}
+
 .login-enter-from,
 .login-leave-to {
     opacity: 0;
