@@ -14,7 +14,7 @@
                 </router-link>
             </template>
         </div>
-        <div class="exit">
+        <div class="exit" @click="handleLogoutClick">
             <svg
                 t="1686186815647"
                 class="icon"
@@ -47,6 +47,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
+import LocalCache from '@/utils/cache';
 import XrIcon from './xr-icon.vue';
 import { useStore } from '@/store';
 const login = useStore().login;
@@ -57,8 +58,16 @@ export default defineComponent({
     },
     setup() {
         const router = computed(() => login.userMenu);
+
+        const handleLogoutClick = () => {
+            LocalCache.deleteCache('token');
+            LocalCache.deleteCache('userid');
+            LocalCache.deleteCache('systemTableData');
+            window.location.reload();
+        };
         return {
             router,
+            handleLogoutClick,
         };
     },
 });

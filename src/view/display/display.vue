@@ -35,5 +35,6 @@ export default defineComponent({
     height: 100vh;
     padding: 5vh 8vw;
     overflow: hidden;
+    background-color: #eff0f5;
 }
 </style>

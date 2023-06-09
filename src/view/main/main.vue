@@ -6,16 +6,12 @@
                     <el-aside width="150px">
                         <XrMenu></XrMenu>
                     </el-aside>
-                    <el-main class="main-box" style="overflow: hidden">
-                        <section style="overflow: hidden">
-                            <router-view
-                                v-slot="{ Component }"
-                                style="overflow: hidden"
-                                mode="out-in"
-                            >
-                                <transition name="router" appear>
-                                    <component :is="Component" />
-                                </transition>
+                    <el-main class="main-box">
+                        <section>
+                            <router-view v-slot="{ Component }" mode="out-in">
+                                <!-- <transition name="router" appear> -->
+                                <component :is="Component" />
+                                <!-- </transition> -->
                             </router-view>
                         </section>
                     </el-main>
@@ -91,7 +87,7 @@ export default defineComponent({
 }
 
 .router-enter-from {
-    top: 3%;
+    // top: 3%;
     opacity: 0;
 }
 
@@ -107,7 +103,7 @@ export default defineComponent({
 
 .router-leave-to {
     opacity: 0;
-    top: 3%;
+    // top: 3%;
 }
 
 .common-layout,
