@@ -8,16 +8,8 @@
 
             <el-table-column fixed="right" label="操作" class="btns">
                 <template #default="scope">
-                    <button
-                        v-if="config.showUpdateColumn"
-                        @click="handleDeleteClick(scope)"
-                        class="btn btn-ghost btn-sm"
-                    >
-                        修改
-                    </button>
-                    <button @click="handleUpdateClick(scope)" class="btn btn-ghost btn-sm">
-                        删除
-                    </button>
+                    <slot name="deleteBtn" :row="scope.row"></slot>
+                    <slot name="updateBtn" :row="scope.row"></slot>
                 </template>
             </el-table-column>
         </el-table>
@@ -26,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import type { contentTableType } from './types/index';
+import type { contentTableType, propListType } from './types/index';
 import type { ITable } from '@/service/main/system/types';
 import { useStore } from '@/store';
 
@@ -43,20 +35,13 @@ export default defineComponent({
             type: Object as PropType<contentTableType>,
             required: true,
         },
+        propList: {
+            type: Array as PropType<propListType[]>,
+        },
     },
     emits: ['deleteTableEmit'],
     setup() {
-        const handleDeleteClick = (scope: any) => {
-            const { id } = scope.row;
-            system.systemDeleteTableAction(id);
-        };
-        const handleUpdateClick = (scope: any) => {
-            console.log(scope);
-        };
-        return {
-            handleDeleteClick,
-            handleUpdateClick,
-        };
+        return {};
     },
 });
 </script>

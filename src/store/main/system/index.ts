@@ -4,6 +4,8 @@ import {
     systemTableRequest,
     systemDeleteTableRequest,
     getAllUserRequest,
+    deleteUserRequest,
+    updateUserReuqest,
 } from '@/service/main/system';
 import { formatUtcString } from '@/utils/date-format';
 
@@ -43,6 +45,15 @@ export default defineStore('system', {
             const data = await getAllUserRequest();
             if (!data) return;
             this.allUser = data.data;
+        },
+        async deleteUserAction(id: number) {
+            console.log(id);
+            const result = await deleteUserRequest(id);
+            console.log(result);
+        },
+        async updateUserAction(id: number, username?: string, password?: string) {
+            const result = await updateUserReuqest(id, username, password);
+            console.log(result);
         },
     },
 });

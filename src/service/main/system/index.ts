@@ -7,7 +7,9 @@ enum MainAPI {
     SystemTable = '/system/tableData',
     DeleteSystemTable = '/system/delete',
     ChangeAudit = '/system/audit',
-    GetAllUser = '/allUser',
+    GetAllUser = '/user/allUser',
+    DeleteUser = '/user/delete',
+    UpdateUser = '/user/update',
 }
 
 export function systemTableRequest(userId: number) {
@@ -39,8 +41,25 @@ export function systemChangeAuditRequest(id: number, userid: number) {
     });
 }
 
+// * user
 export function getAllUserRequest() {
     return xrRequest.get({
         url: BASE_URL + MainAPI.GetAllUser,
+    });
+}
+
+export function deleteUserRequest(id: number) {
+    return xrRequest.post({
+        url: BASE_URL + MainAPI.DeleteUser,
+        data: {
+            id,
+        },
+    });
+}
+
+export function updateUserReuqest(id: number, username?: string, password?: string) {
+    return xrRequest.post({
+        url: BASE_URL + MainAPI.UpdateUser,
+        data: { id, username, password },
     });
 }

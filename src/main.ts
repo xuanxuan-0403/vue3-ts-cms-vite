@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 
-import './assets/css/base.css';
+import './assets/css/index.less';
 import './tailwind.css';
 import 'uno.css';
 

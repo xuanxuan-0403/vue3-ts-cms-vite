@@ -18,6 +18,7 @@
                 </el-container>
             </div>
         </article>
+        <Footer class="footer" />
     </div>
 </template>
 
@@ -26,6 +27,7 @@ import { defineComponent } from 'vue';
 import NavMenu from './components/nav-menu.vue';
 import NavHeader from './components/nav-header.vue';
 import XrMenu from '@/components/xr-menu';
+import Footer from './footer.vue';
 
 export default defineComponent({
     name: 'main',
@@ -33,6 +35,7 @@ export default defineComponent({
         NavHeader,
         NavMenu,
         XrMenu,
+        Footer,
     },
     setup() {
         return {};
@@ -42,15 +45,21 @@ export default defineComponent({
 
 <style lang="less">
 .main {
-    width: 100vw;
-    height: 100vh;
+    position: relative;
+    width: 98.5vw;
+    height: 125vh;
     transition: all 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 3;
     article {
+        top: 4%;
+        position: absolute;
         width: 90%;
-        height: 94%;
+        height: 70%;
         background-color: #12143e;
         border-radius: 40px;
     }
@@ -113,5 +122,13 @@ export default defineComponent({
 
 .el-aside {
     overflow: unset;
+}
+
+.footer {
+    position: fixed;
+    // position: absolute;
+    bottom: 0;
+    z-index: -1;
+    // margin-top: 60vh;
 }
 </style>
