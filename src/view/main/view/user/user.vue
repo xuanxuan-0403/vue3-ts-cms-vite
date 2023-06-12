@@ -70,7 +70,6 @@ export default defineComponent({
             system.deleteUserAction(id);
         };
         const handleUpdateClick = () => {
-            console.log(1111);
             const id: number = dialogVisible.id;
             system.updateUserAction(id, userinfo.username, userinfo.password);
         };

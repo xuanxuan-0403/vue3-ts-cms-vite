@@ -27,6 +27,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { r18_0 } from '@/config/API';
 
 export default defineComponent({
     setup() {
@@ -38,5 +39,9 @@ export default defineComponent({
 <style scoped lang="less">
 .footer {
     width: 100vw !important;
+    footer {
+        // background: url('https://image.anosu.top/pixiv?r18=0') no-repeat center center / 100%;
+        backdrop-filter: blur(30px);
+    }
 }
 </style>

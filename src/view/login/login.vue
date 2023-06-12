@@ -57,6 +57,7 @@ export default defineComponent({
 
 .login {
     background-color: #eff0f5;
+    z-index: 9999;
 }
 
 .login-enter-from,

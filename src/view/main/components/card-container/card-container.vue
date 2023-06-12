@@ -102,6 +102,7 @@ export default defineComponent({
         position: fixed;
         right: 3vw;
         top: 3vw;
+        z-index: 999;
 
         button {
             padding: 0;
