@@ -17,6 +17,13 @@ import {
     ElTableColumn,
     ElRow,
     ElCol,
+    ElForm,
+    ElFooter,
+    ElFormItem,
+    ElSelect,
+    ElOption,
+    ElDialog,
+    ElInput,
 } from 'element-plus';
 
 const components = [
@@ -32,6 +39,13 @@ const components = [
     ElTableColumn,
     ElRow,
     ElCol,
+    ElDialog,
+    ElForm,
+    ElFooter,
+    ElFormItem,
+    ElSelect,
+    ElOption,
+    ElInput,
 ];
 
 // icon

@@ -58,6 +58,7 @@ export function deleteUserRequest(id: number) {
 }
 
 export function updateUserReuqest(id: number, username?: string, password?: string) {
+    console.log(id, username, password);
     return xrRequest.post({
         url: BASE_URL + MainAPI.UpdateUser,
         data: { id, username, password },
