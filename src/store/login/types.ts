@@ -3,6 +3,8 @@ export interface ILoginState {
     name: string;
     showLoginReactivePage: boolean;
     userMenu: any[];
+    username: string;
+    role: string;
 }
 
 export interface IAccount {

@@ -4,7 +4,7 @@
             <div class="common-layout">
                 <el-container>
                     <el-aside width="150px">
-                        <XrMenu></XrMenu>
+                        <XrMenu :username="username" :userrole="role"></XrMenu>
                     </el-aside>
                     <el-main class="main-box">
                         <section>
@@ -28,6 +28,7 @@ import NavMenu from './components/nav-menu.vue';
 import NavHeader from './components/nav-header.vue';
 import XrMenu from '@/components/xr-menu';
 import Footer from './footer.vue';
+import LocalCache from '@/utils/cache';
 
 export default defineComponent({
     name: 'main',
@@ -38,7 +39,12 @@ export default defineComponent({
         Footer,
     },
     setup() {
-        return {};
+        const username = LocalCache.getCache('username');
+        const role = LocalCache.getCache('role');
+        return {
+            username,
+            role,
+        };
     },
 });
 </script>
@@ -85,6 +91,7 @@ export default defineComponent({
         background-color: #f3f6fb;
         border-radius: 40px;
         overflow: hidden;
+        padding: 1em;
     }
 }
 

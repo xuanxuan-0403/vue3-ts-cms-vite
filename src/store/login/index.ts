@@ -10,9 +10,11 @@ export default defineStore('login', {
     state: (): ILoginState => {
         return {
             name: 'login',
+            username: '',
             token: '',
             showLoginReactivePage: false,
             userMenu: [],
+            role: '',
         };
     },
     actions: {
@@ -22,8 +24,12 @@ export default defineStore('login', {
 
             LocalCache.setCache('token', data.token);
             LocalCache.setCache('userid', data.userid);
+            LocalCache.setCache('username', data.username);
+            LocalCache.setCache('role', data.role);
+            this.role = data.role;
             this.userMenu = data.router;
-            console.log(data.userid);
+            this.username = data.username;
+            console.log(data.userid, data.username);
             console.log(data.message);
 
             // 注册动态路由

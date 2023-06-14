@@ -4,8 +4,8 @@
             <div class="w-18 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                 <img src="@/assets/images/me-logo.jpg" />
             </div>
-            <span class="user-name">xyx</span>
-            <p class="user-role">普通用户</p>
+            <span class="user-name">{{ username }}</span>
+            <p class="user-role">{{ userrole }}</p>
         </div>
         <div class="icons">
             <template v-for="item in router" :key="router.id">
@@ -56,6 +56,16 @@ export default defineComponent({
     components: {
         XrIcon,
     },
+    props: {
+        username: {
+            type: String,
+            default: 'user',
+        },
+        userrole: {
+            type: String,
+            default: '普通用户',
+        },
+    },
     setup() {
         const router = computed(() => login.userMenu);
 
@@ -63,6 +73,8 @@ export default defineComponent({
             LocalCache.deleteCache('token');
             LocalCache.deleteCache('userid');
             LocalCache.deleteCache('systemTableData');
+            LocalCache.deleteCache('username');
+            LocalCache.deleteCache('role');
             window.location.reload();
         };
         return {
