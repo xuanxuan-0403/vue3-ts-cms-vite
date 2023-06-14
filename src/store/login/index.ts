@@ -34,7 +34,6 @@ export default defineStore('login', {
 
             // 注册动态路由
             const routes = mapMenusToRoutes(data.router);
-            console.log('--------------', routes);
             routes.then((res) => {
                 res.forEach((route) => {
                     router.addRoute('main', route);
