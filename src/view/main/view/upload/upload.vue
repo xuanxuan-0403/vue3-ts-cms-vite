@@ -60,6 +60,7 @@
                                     class="textarea"
                                     placeholder="请项目名称: "
                                     v-model="projectName"
+                                    :disabled="isProjectNameDisabled"
                                 ></textarea>
                             </div>
                             <div class="flex flex-1 justify-center px-4 py-16 bg-base-200">
@@ -67,6 +68,7 @@
                                     class="textarea"
                                     placeholder="请输入描述: "
                                     v-model="desc"
+                                    :disabled="isDescDisabled"
                                 ></textarea>
                             </div>
                         </div>
@@ -103,17 +105,20 @@ export default defineComponent({
         let isUploadImgDisabled = ref(true);
         const desc = ref<string>();
         const projectName = ref<string>();
+        let isProjectNameDisabled = ref(false);
+        let isDescDisabled = ref(true);
 
         // 监听项目名称的输入
         watch(projectName, (oldValue, newValue) => {
-            newValue !== ''
-                ? ((isUploadDisabled.value = false), (system.stepNumber = 1))
-                : (isUploadDisabled.value = true);
+            newValue !== '' ? (system.stepNumber = 1) : null;
+            isDescDisabled.value = false;
         });
 
         // 监听项目描述的输入
         watch(desc, (oldValue, newValue) => {
-            newValue !== '' ? (system.stepNumber = 2) : '';
+            newValue !== ''
+                ? ((isUploadDisabled.value = false), (system.stepNumber = 2))
+                : (isUploadDisabled.value = true);
         });
 
         // 文件上传完成时的钩子
@@ -134,6 +139,8 @@ export default defineComponent({
             projectName,
             isUploadDisabled,
             isUploadImgDisabled,
+            isProjectNameDisabled,
+            isDescDisabled,
             onUploadSuccess,
             onUploadProgress,
             stepConfig,
