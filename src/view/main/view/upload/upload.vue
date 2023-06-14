@@ -176,7 +176,7 @@ export default defineComponent({
     flex-direction: column;
     .container {
         width: 100%;
-        height: 50%;
+        height: 53%;
         justify-content: space-between;
         display: flex;
     }

@@ -10,7 +10,7 @@
         <div class="icons">
             <template v-for="item in router" :key="router.id">
                 <router-link :to="item.url">
-                    <XrIcon :title="item.name" />
+                    <XrIcon :title="item.name" :svg-string="item.svg" />
                 </router-link>
             </template>
         </div>

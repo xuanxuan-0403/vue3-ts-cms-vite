@@ -36,4 +36,10 @@ export default defineComponent({
 .xr-step {
     transition: all 0.5s;
 }
+
+.step-primary {
+    &::before {
+        transition: all 0.5s;
+    }
+}
 </style>
