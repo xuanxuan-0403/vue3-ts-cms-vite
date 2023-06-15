@@ -172,5 +172,9 @@ export default defineComponent({
             transition-delay: 0.2s;
         }
     }
+    .list {
+        position: absolute;
+        z-index: 999;
+    }
 }
 </style>
