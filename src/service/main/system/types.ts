@@ -22,3 +22,14 @@ export interface ITableDataArr {
     name: string;
     userid: number;
 }
+
+export interface IGetTag {
+    code: number;
+    message: string;
+    data: IGetTag[];
+}
+
+export interface ITagData {
+    id: number;
+    tag: string;
+}

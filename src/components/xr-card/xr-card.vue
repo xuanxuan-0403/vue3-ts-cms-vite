@@ -20,6 +20,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import { BASE_URL } from '@/service/request/config';
 
 export default defineComponent({
     props: {
@@ -41,7 +42,7 @@ export default defineComponent({
         },
     },
     setup(props) {
-        const API = 'http://10.87.1.106:11451';
+        const API = `${BASE_URL}:11451`;
         const imgUrl = ref<string>();
         if (props.imgpath) {
             const img = props.imgpath.substring(36);

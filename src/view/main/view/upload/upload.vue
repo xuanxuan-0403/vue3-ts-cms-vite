@@ -13,7 +13,7 @@
                                 :action="zipAPI"
                                 :multiple="false"
                                 accept=".zip"
-                                :data="{ userId, desc, projectName }"
+                                :data="{ userId, desc, projectName, checkboxData }"
                                 :disabled="isUploadDisabled"
                                 :on-success="onUploadSuccess"
                                 :on-progress="onUploadProgress"
@@ -36,7 +36,7 @@
                                 :auto-upload="true"
                                 :disabled="isUploadImgDisabled"
                                 accept=".png, .jpg"
-                                :data="{ userId, desc, projectName }"
+                                :data="{ userId, desc, projectName, checkboxData }"
                             >
                                 <el-icon><Plus /></el-icon>
                                 <template #file="{ file }">
@@ -74,20 +74,32 @@
                         </div>
                     </div>
                 </div>
+                <div class="checkbox-box">
+                    <template v-for="tag in allTagData">
+                        <el-checkbox
+                            :disabled="isCheckboxDisabled"
+                            :label="tag.tag"
+                            v-model="checkboxData"
+                        />
+                    </template>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch } from 'vue';
+import { defineComponent, ref, watch, computed } from 'vue';
+
+import warning from '@/components/warning';
+import XrCheckbox from '@/components/xr-checkbox';
+import XrSteps from '@/components/xr-steps';
+
 import { UploadFilled } from '@element-plus/icons-vue';
 import { useStore } from '@/store';
 const system = useStore().system;
-import warning from '@/components/warning';
 import LocalCache from '@/utils/cache';
 import { BASE_HOST } from '@/service/request/config';
-import XrSteps from '@/components/xr-steps';
 import { stepConfig } from './config/step.config';
 
 export default defineComponent({
@@ -95,6 +107,7 @@ export default defineComponent({
     components: {
         warning,
         XrSteps,
+        XrCheckbox,
     },
     setup() {
         const zipAPI = `${BASE_HOST}/upload/`;
@@ -107,6 +120,7 @@ export default defineComponent({
         const projectName = ref<string>();
         let isProjectNameDisabled = ref(false);
         let isDescDisabled = ref(true);
+        let isCheckboxDisabled = ref(true);
 
         // 监听项目名称的输入
         watch(projectName, (oldValue, newValue) => {
@@ -116,20 +130,35 @@ export default defineComponent({
 
         // 监听项目描述的输入
         watch(desc, (oldValue, newValue) => {
-            newValue !== ''
-                ? ((isUploadDisabled.value = false), (system.stepNumber = 2))
-                : (isUploadDisabled.value = true);
+            if (newValue) {
+                isCheckboxDisabled.value = false;
+                system.stepNumber = 2;
+            } else {
+                isCheckboxDisabled.value = true;
+            }
         });
 
         // 文件上传完成时的钩子
         const onUploadSuccess = () => {
             isUploadImgDisabled.value = false;
-            system.stepNumber = 4;
+            system.stepNumber = 5;
         };
         // 文件上传时的钩子
         const onUploadProgress = () => {
-            system.stepNumber = 3;
+            system.stepNumber = 4;
         };
+
+        // tag
+        system.getAlltagAction();
+        const allTagData = computed(() => system.tagData);
+        const checkboxData = ref<string[]>([]);
+        system.userTag = checkboxData;
+
+        watch(checkboxData, (oldValue, newValue) => {
+            newValue
+                ? ((system.stepNumber = 3), (isUploadDisabled.value = false))
+                : (isUploadDisabled.value = true);
+        });
 
         return {
             zipAPI,
@@ -141,9 +170,12 @@ export default defineComponent({
             isUploadImgDisabled,
             isProjectNameDisabled,
             isDescDisabled,
+            isCheckboxDisabled,
             onUploadSuccess,
             onUploadProgress,
             stepConfig,
+            allTagData,
+            checkboxData,
         };
     },
 });
@@ -176,7 +208,7 @@ export default defineComponent({
     flex-direction: column;
     .container {
         width: 100%;
-        height: 53%;
+        // height: 53%;
         justify-content: space-between;
         display: flex;
     }
@@ -207,6 +239,9 @@ export default defineComponent({
                 display: flex;
             }
         }
+    }
+    .checkbox-box {
+        display: flex;
     }
 }
 </style>

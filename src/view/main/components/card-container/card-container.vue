@@ -173,6 +173,8 @@ export default defineComponent({
         }
     }
     .list {
+        width: 100%;
+        height: 100%;
         position: absolute;
         z-index: 999;
     }

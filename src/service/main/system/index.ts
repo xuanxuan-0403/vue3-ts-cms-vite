@@ -1,7 +1,7 @@
 import xrRequest from '@/service';
 
 import { BASE_URL } from '@/service/request/config';
-import type { ITableData } from './types';
+import type { ITableData, IGetTag } from './types';
 
 enum MainAPI {
     SystemTable = '/system/tableData',
@@ -10,6 +10,7 @@ enum MainAPI {
     GetAllUser = '/user/allUser',
     DeleteUser = '/user/delete',
     UpdateUser = '/user/update',
+    getTag = '/tag/get',
 }
 
 export function systemTableRequest(userId: number) {
@@ -58,9 +59,15 @@ export function deleteUserRequest(id: number) {
 }
 
 export function updateUserReuqest(id: number, username?: string, password?: string) {
-    console.log(id, username, password);
     return xrRequest.post({
         url: BASE_URL + MainAPI.UpdateUser,
         data: { id, username, password },
+    });
+}
+
+// * tag
+export function getTagRequest() {
+    return xrRequest.get<IGetTag>({
+        url: BASE_URL + MainAPI.getTag,
     });
 }

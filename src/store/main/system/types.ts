@@ -4,4 +4,6 @@ export interface ISystemState {
     tableList: any[];
     allUser: any[];
     stepNumber: number;
+    tagData: any[];
+    userTag: any;
 }

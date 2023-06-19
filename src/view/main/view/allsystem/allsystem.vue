@@ -35,5 +35,7 @@ export default defineComponent({
     padding: 0.5rem;
     background-color: #fff;
     border-radius: 1em;
+    width: 100%;
+    height: 100%;
 }
 </style>

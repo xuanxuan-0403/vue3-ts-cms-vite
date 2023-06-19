@@ -11,6 +11,9 @@ export const stepConfig: IStepsListConfig[] = [
         title: '填写项目描述',
     },
     {
+        title: '选择项目标签',
+    },
+    {
         title: '将.zip压缩包拖入',
     },
     {

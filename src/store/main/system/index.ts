@@ -6,6 +6,7 @@ import {
     getAllUserRequest,
     deleteUserRequest,
     updateUserReuqest,
+    getTagRequest,
 } from '@/service/main/system';
 import { formatUtcString } from '@/utils/date-format';
 
@@ -19,6 +20,8 @@ export default defineStore('system', {
             tableList: [],
             allUser: [],
             stepNumber: 0,
+            tagData: [],
+            userTag: [],
         };
     },
     actions: {
@@ -55,6 +58,11 @@ export default defineStore('system', {
         async updateUserAction(id: number, username?: string, password?: string) {
             const result = await updateUserReuqest(id, username, password);
             console.log(result);
+        },
+        async getAlltagAction() {
+            const data = await getTagRequest();
+            console.log(data);
+            this.tagData = data.data;
         },
     },
 });

@@ -24,6 +24,7 @@ import {
     ElOption,
     ElDialog,
     ElInput,
+    ElCheckbox,
 } from 'element-plus';
 
 const components = [
@@ -46,6 +47,7 @@ const components = [
     ElSelect,
     ElOption,
     ElInput,
+    ElCheckbox,
 ];
 
 // icon

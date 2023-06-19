@@ -36,6 +36,7 @@ export interface IRootState {
             getAllUserAction(): void;
             deleteUserAction(id: number): void;
             updateUserAction(id: number, username?: string, password?: string): void;
+            getAlltagAction(): void;
         }
     >;
     display: Store<
