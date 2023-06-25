@@ -5,8 +5,8 @@
 // 生产环境: production
 // 测试环境: test
 
-const BASE_IP = 'http://127.0.0.1';
-// const BASE_IP = 'http://10.87.1.101';
+// const BASE_IP = 'http://127.0.0.1';
+const BASE_IP = 'http://10.87.1.101';
 const BASE_HOST = `${BASE_IP}:7001`;
 
 let BASE_URL = '';

@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { BASE_URL } from '@/service/request/config';
+import { BASE_IP } from '@/service/request/config';
 
 export default defineComponent({
     props: {
@@ -42,7 +42,7 @@ export default defineComponent({
         },
     },
     setup(props) {
-        const API = `${BASE_URL}:11451`;
+        const API = `${BASE_IP}:11451`;
         const imgUrl = ref<string>();
         if (props.imgpath) {
             const img = props.imgpath.substring(36);

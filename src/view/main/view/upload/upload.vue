@@ -13,7 +13,12 @@
                                 :action="zipAPI"
                                 :multiple="false"
                                 accept=".zip"
-                                :data="{ userId, desc, projectName, checkboxData }"
+                                :data="{
+                                    userId,
+                                    desc,
+                                    projectName,
+                                    checkboxData: checkboxData.toString(),
+                                }"
                                 :disabled="isUploadDisabled"
                                 :on-success="onUploadSuccess"
                                 :on-progress="onUploadProgress"
@@ -156,7 +161,9 @@ export default defineComponent({
 
         watch(checkboxData, (oldValue, newValue) => {
             newValue
-                ? ((system.stepNumber = 3), (isUploadDisabled.value = false))
+                ? ((system.stepNumber = 3),
+                  console.log(checkboxData.value),
+                  (isUploadDisabled.value = false))
                 : (isUploadDisabled.value = true);
         });
 
