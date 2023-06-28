@@ -4,7 +4,11 @@
             :config="contentTableConfig"
             :data="tableData"
             :deleteTableEmit="deleteTableEmit"
-        />
+        >
+            <template #deleteBtn="scope">
+                <button @click="deleteTableEmit(scope)" class="btn btn-ghost btn-sm">删除</button>
+            </template>
+        </SystemTable>
     </div>
 </template>
 
@@ -30,8 +34,9 @@ export default defineComponent({
         system.systemTableAction(userid as number);
         const tableData = computed((): ITable[] => system.tableList);
 
-        const deleteTableEmit = (id: number) => {
-            console.log(id);
+        const deleteTableEmit = (scope: any) => {
+            const id = scope.row.id;
+            system.systemDeleteTableAction(id);
         };
 
         return {
