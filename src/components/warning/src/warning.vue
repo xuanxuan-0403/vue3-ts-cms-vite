@@ -1,5 +1,5 @@
 <template>
-    <div class="alert alert-warning shadow-lg h-14">
+    <div class="alert alert-warning shadow-lg h-14" v-if="isShow">
         <div>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -15,18 +15,46 @@
                 />
             </svg>
             <span><slot>请填写内容! </slot></span>
+            <button class="btn btn-square btn-outline" @click="handleShowBtn">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                    />
+                </svg>
+            </button>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
     setup() {
-        return {};
+        const isShow = ref(true);
+        const handleShowBtn = () => {
+            isShow.value = false;
+        };
+        return {
+            isShow,
+            handleShowBtn,
+        };
     },
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="less">
+.btn {
+    position: absolute;
+    right: 2%;
+}
+</style>
