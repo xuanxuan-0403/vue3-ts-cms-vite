@@ -6,6 +6,8 @@ import { presetUno, transformerDirectives } from 'unocss';
 import { presetDaisy } from 'unocss-preset-daisy';
 import styleImport from 'vite-plugin-style-import';
 
+import { config } from './src/config/config';
+
 // https://vitejs.dev/config/
 
 export default defineConfig({
@@ -54,14 +56,14 @@ export default defineConfig({
         https: false, // 是否开启 https
         open: true, // 是否自动在浏览器打开
         cors: true, // 允许跨域
-        port: 3000, // 端口号
-        host: '0.0.0.0',
+        port: 4000, // 端口号
+        host: config.server,
         hmr: {
             overlay: false, // [unocss] entry module not found, have you add `import 'uno.css'` in your mai
         },
         proxy: {
             '/api': {
-                target: 'http://10.87.1.106:7001', //实际请求地址
+                target: `http://${config.api}:${config.host}`, //实际请求地址
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, ''),
             },

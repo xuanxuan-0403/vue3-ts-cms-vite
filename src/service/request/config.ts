@@ -1,3 +1,4 @@
+import { config } from '@/config/config';
 // * 在不同的环境下会有不同的值 // * 推荐
 
 // * 根据process.env.NODE_ENV
@@ -6,8 +7,8 @@
 // 测试环境: test
 
 // const BASE_IP = 'http://127.0.0.1';
-const BASE_IP = 'http://10.87.1.101';
-const BASE_HOST = `${BASE_IP}:7001`;
+const BASE_IP = `http://${config.api}`;
+const BASE_HOST = `${BASE_IP}:${config.host}`;
 
 let BASE_URL = '';
 const TIME_OUT = 10000;
